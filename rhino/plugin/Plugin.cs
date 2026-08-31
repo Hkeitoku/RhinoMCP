@@ -5,6 +5,24 @@ namespace RhMcp;
 public class RhMcpPlugin : PlugIn
 {
 
+    // Persisted per-plugin setting. When false, the MCP server is NOT started
+    // automatically on the first document open; start it by hand with MCPStart.
+    // Toggle with the MCPAutoStart command. Defaults to true (original behaviour).
+    internal const string AutoStartSettingKey = "AutoStartServer";
+
+    public RhMcpPlugin()
+    {
+        Instance = this;
+    }
+
+    public static RhMcpPlugin? Instance { get; private set; }
+
+    internal bool AutoStartEnabled
+    {
+        get => Settings.GetBool(AutoStartSettingKey, true);
+        set => Settings.SetBool(AutoStartSettingKey, value);
+    }
+
     protected override LoadReturnCode OnLoad(ref string errorMessage)
     {
         RhinoDoc.BeginOpenDocument += Register;
@@ -18,6 +36,12 @@ public class RhMcpPlugin : PlugIn
 
         string? portStr = Environment.GetEnvironmentVariable(MCPSpawnCommand.PortEnvVar);
         if (!string.IsNullOrEmpty(portStr)) return;
+
+        if (!AutoStartEnabled)
+        {
+            RhinoApp.WriteLine("Rhino MCP auto-start is off. Run MCPStart to start the server, or MCPAutoStart to re-enable.");
+            return;
+        }
 
         try
         {
