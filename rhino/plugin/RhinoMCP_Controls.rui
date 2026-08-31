@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RhinoUI major_ver="3" minor_ver="0" guid="09d910ad-adc5-4363-863d-a5dc6ebcb68f" localize="False" default_language_id="1033" dpi_scale="100">
+  <extend_rhino_menus />
+  <menus />
+  <tool_bar_groups>
+    <tool_bar_group guid="7ab1bb3f-fbf0-44d1-887a-3bab07b15e1e" dock_bar_guid32="00000000-0000-0000-0000-000000000000" dock_bar_guid64="abe48996-bcfb-4da4-b8e7-ef441e031ba8" active_tool_bar_group="1ecb1f97-aef5-49a9-9c56-fc23fb4ec975" single_file="False" hide_single_tab="False" point_floating="600,300">
+      <text><locale_1033>Rhino MCP</locale_1033></text>
+      <tool_bar_group_item guid="1ecb1f97-aef5-49a9-9c56-fc23fb4ec975" major_version="1" minor_version="0">
+        <text><locale_1033>Rhino MCP</locale_1033></text>
+        <tool_bar_id>408b678a-9c02-4305-b1c3-ba1403917841</tool_bar_id>
+      </tool_bar_group_item>
+      <dock_bar_info dpi_scale="100" dock_bar="False" docking="True" horz="True" visible="True" floating="True" mru_float_style="8192" bar_id="59470" mru_width="400" point_pos="-2,-2" float_point="600,300" rect_mru_dock_pos="0,0,0,0" dock_location_u="59419" dock_location="top" float_size="360,60" />
+    </tool_bar_group>
+  </tool_bar_groups>
+  <tool_bars>
+    <tool_bar guid="408b678a-9c02-4305-b1c3-ba1403917841" item_display_style="control_and_text">
+      <text><locale_1033>Rhino MCP</locale_1033></text>
+      <tool_bar_item guid="ae4f035f-79b0-4446-817c-c69bde7d7a4d" button_display_mode="control_and_text" display_style_from_parent="False">
+        <text><locale_1033>MCP Start</locale_1033></text>
+        <left_macro_id>a469d529-a8da-4837-9f83-8728ee91086d</left_macro_id>
+      </tool_bar_item>
+      <tool_bar_item guid="024139a8-47cb-4eb5-b996-1460b1adb07c" button_display_mode="control_and_text" display_style_from_parent="False">
+        <text><locale_1033>MCP Stop</locale_1033></text>
+        <left_macro_id>082beb3a-e750-49d4-95bd-d98211fc0cf9</left_macro_id>
+      </tool_bar_item>
+      <tool_bar_item guid="de22e4e7-7a7b-49ba-aed6-aba7fbca16e1" button_display_mode="control_and_text" display_style_from_parent="False">
+        <text><locale_1033>MCP Auto</locale_1033></text>
+        <left_macro_id>85455fa2-4c4d-4abd-b8d8-0cab2dde9b30</left_macro_id>
+      </tool_bar_item>
+    </tool_bar>
+  </tool_bars>
+  <macros>
+    <macro_item guid="a469d529-a8da-4837-9f83-8728ee91086d">
+      <text><locale_1033>MCP Start</locale_1033></text>
+      <tooltip><locale_1033>Start the Rhino MCP server on the default port</locale_1033></tooltip>
+      <button_text><locale_1033>MCP Start</locale_1033></button_text>
+      <script>! _MCPStart _Enter</script>
+    </macro_item>
+    <macro_item guid="082beb3a-e750-49d4-95bd-d98211fc0cf9">
+      <text><locale_1033>MCP Stop</locale_1033></text>
+      <tooltip><locale_1033>Stop the Rhino MCP server for this document</locale_1033></tooltip>
+      <button_text><locale_1033>MCP Stop</locale_1033></button_text>
+      <script>! _MCPStop</script>
+    </macro_item>
+    <macro_item guid="85455fa2-4c4d-4abd-b8d8-0cab2dde9b30">
+      <text><locale_1033>MCP Auto-start</locale_1033></text>
+      <tooltip><locale_1033>Toggle automatic MCP server startup (On/Off/Toggle)</locale_1033></tooltip>
+      <button_text><locale_1033>MCP Auto</locale_1033></button_text>
+      <script>! _MCPAutoStart</script>
+    </macro_item>
+  </macros>
+  <bitmaps>
+    <small_bitmap item_width="16" item_height="16" />
+    <normal_bitmap item_width="24" item_height="24" />
+    <large_bitmap item_width="32" item_height="32" />
+  </bitmaps>
+  <scripts />
+</RhinoUI>
