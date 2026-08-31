@@ -28,6 +28,13 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Toolbar: embedded so the plugin can recreate it, and copied next to the
+         .rhp so Rhino auto-loads the same-named .rui. -->
+    <EmbeddedResource Include="RhinoMcpPlatform.rui" />
+    <None Include="RhinoMcpPlatform.rui" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
   <PropertyGroup>
     <AspNetCoreRuntimeVersion>8.0.*</AspNetCoreRuntimeVersion>
   </PropertyGroup>
